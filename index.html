@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Jednoręki Bandyta</title>
+  <link href="https://fonts.googleapis.com/css?family=Nova+Mono" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Acme" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="wrap-machine">
+      <section class="machine-up">
+        <h1>
+          JEDNORĘKI BANDYTA
+        </h1>
+      </section>
+      <section class="machine-middle">
+        <div class="results">
+          <div class="panel-result">
+            <div class="res1"><span class="span-result"></span></div>
+            <div class="res2">GRY <br><span class="span-game">0</span></div>
+            <div class="res3">WYGRANE <br><span class="span-win">0</span></div>
+            <div class="res4">PRZEGRANE <br><span class="span-loss">0</span></div>
+          </div>
+        </div>
+        <div class="desctop-wrap">
+          <div class="image"></div>
+          <div class="image"></div>
+          <div class="image"></div>
+        </div>
+        <div class="panel-money">
+          <div class="res1">TWOJE<span class="dollar">$$$</span> <span class="span-money"></span></div>
+          <input type="number" placeholder="TWOJA STAWKA" id="bid">
+        </div>
+      </section>
+      <section class="machine-down">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+        <div class="circle1"></div>
+        <div class="circle2"></div>
+        <div class="circle3"></div>
+        <div class="circle4"></div>
+      </section>
+    </div>
+    <section class="hand-all">
+      <div class="play-hand">
+        <span class="go">ZAKRĘĆ</span>
+      </div>
+      <div class="hand">
+        <div class="el1"></div>
+        <div class="el2"> <button class="el3" id="start"></button></div>
+      </div>
+    </section>
+  </div>
+  <div class="modal-wrap">
+    <div class="modal-hiden">
+      <div class="ring r1"></div>
+      <div class="ring r2"></div>
+      <div class="ring r3"></div>
+      <div class="ring r4"></div>
+      <button class="continue" onClick="window.location.reload()">ZAGRAJ JESZCZE RAZ</button>
+    </div>
+    <div class="modal">
+      <div class="bandit"></div>
+      <div class="b-right"></div>
+      <div class="b-left"></div>
+      <div class="text"><span>GAME OVER</span>
+        <div class="line l-one"></div>
+        <div class="line l-two"></div>
+      </div>
+    </div>
+  </div>
+  <script src="Wallet.js"></script>
+  <script src="Statistics.js"></script>
+  <script src="Draw.js"></script>
+  <script src="Result.js"></script>
+  <script src="Game.js"></script>
+  <script src="main.js"></script>
+</body>
+
+</html>

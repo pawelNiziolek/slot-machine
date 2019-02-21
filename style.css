@@ -1,0 +1,818 @@
+/* 
+brązowy: #690E0B
+zółty: #D6DE16
+jasno-bordowy: #B60600
+niebieski: #0D4E83
+ciemny-niebieski: #053C69
+
+
+fonty: 
+font-family: 'Nova Mono', monospace;
+font-family: 'Acme', sans-serif;
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+  background-color: #000;
+  font-family: "Acme", sans-serif;
+}
+
+.wrap {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 850px;
+  animation: grow 1.5s linear;
+}
+
+.wrap-machine {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  min-width: 600px;
+  z-index: 55;
+}
+
+/* animacja dla div.wrap przy wejściu na strone */
+@keyframes grow {
+  0% {
+    transform: translate(-50%, -50%) scale(0.2);
+  }
+
+  50% {
+    transform: translate(-50%, -50%) scale(0.2);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+.machine-up,
+.machine-middle,
+.machine-down {
+  width: 100%;
+  background-image: linear-gradient(
+    rgb(129, 5, 11),
+    rgb(236, 30, 40),
+    rgb(129, 5, 11)
+  );
+  box-shadow: 0 0 0 3px #072864, 0 0 0 5px #043692, 0 0 0 6px #164193,
+    0 0 0 7px #053285, 0 0 0 10px #072864;
+}
+
+.hand,
+.arrow,
+.play-hand {
+  position: absolute;
+}
+
+.machine-up {
+  position: relative;
+  margin: 0 auto 3%;
+  border-radius: 100px 100px 0 0;
+  text-align: center;
+}
+
+.machine-up h1 {
+  font-size: 40px;
+  font-family: "Nova Mono", monospace;
+  color: gold;
+  text-shadow: 0 0 2px black, 0 0 4px white;
+  animation: h1-light 2s linear infinite;
+}
+
+@keyframes h1-light {
+  50% {
+    text-shadow: 0 0 3px black, 0 0 6px white, 0 0 15px gold;
+  }
+}
+
+/* klasa i animacja po przekroczeniu 1000$ */
+.machine-up h1.big-money {
+  color: rgb(4, 68, 128);
+  text-shadow: 0 0 4px black, 0 0 8px white, 0 0 17px rgb(0, 68, 255);
+}
+
+@keyframes h1-light-big-money {
+  50% {
+    color: rgb(9, 110, 204);
+    text-shadow: 0 0 3px black, 0 0 6px gold, 0 0 15px black;
+  }
+}
+
+.machine-middle,
+.results,
+.panel-result,
+.panel-money,
+.panel-money div,
+.panel-money input {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.machine-middle {
+  flex-direction: column;
+  margin: 0 auto 3%;
+  padding: 1%;
+}
+
+.results {
+  text-align: center;
+  margin: 10px;
+  width: 100%;
+}
+
+.panel-result {
+  align-items: center;
+  width: 90%;
+}
+
+.panel-result div {
+  width: 21%;
+  height: 55px;
+  padding: 5px 15px;
+  background-image: linear-gradient(gold 30%, white, gold 70%);
+  border-radius: 15px;
+}
+
+.panel-money {
+  height: 60px;
+  width: 90%;
+  margin: 10px;
+}
+
+span.dollar {
+  font-size: 35px;
+}
+
+.panel-money div,
+.panel-money input {
+  width: 42%;
+  height: 50px;
+  box-shadow: 0 0 0 2px gold, 0 0 0 3px rgb(230, 203, 53),
+    0 0 0 6px rgb(194, 165, 0);
+  border-radius: 10px;
+}
+
+.panel-money div {
+  font-size: 23px;
+  background-image: linear-gradient(gold 25%, white, gold 75%);
+}
+
+.panel-money input {
+  border: none;
+  font-size: 21px;
+  font-family: "Acme", sans-serif;
+  background-image: linear-gradient(gold 20%, white, gold 75%);
+  padding: 0 10px;
+  cursor: pointer;
+}
+
+.desctop-wrap {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 97%;
+  height: 200px;
+  margin: 10px;
+  box-shadow: 0 0 0 3px gold, 0 0 0 4px rgb(230, 203, 53),
+    0 0 0 7px rgb(194, 165, 0);
+  border-radius: 10px;
+  background-image: linear-gradient(
+    rgb(116, 4, 10),
+    rgb(233, 27, 38),
+    rgb(116, 4, 10)
+  );
+  overflow: hidden;
+}
+
+.image {
+  width: 30%;
+  height: 170px;
+  margin: 10px;
+  background-image: linear-gradient(
+    rgb(110, 110, 110),
+    white,
+    rgb(110, 110, 110)
+  );
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  transition: 0.8s;
+  transform: translateY(0);
+}
+
+.image:nth-of-type(1) {
+  animation: image-down 2s 0.2s linear;
+  transition-delay: 0.2s;
+}
+
+.image:nth-of-type(2) {
+  animation: image-down 2s 0.4s linear;
+  transition-delay: 0.4s;
+}
+
+.image:nth-of-type(3) {
+  animation: image-down 2s 0.6s linear;
+  transition-delay: 0.6s;
+}
+
+/* animacja dla pustych szarych tablic z początku gry */
+@keyframes image-down {
+  0% {
+    transform: translateY(-120%);
+  }
+
+  70% {
+    transform: translateY(-120%);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.machine-down {
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px;
+}
+
+.line1,
+.line2,
+.line3 {
+  position: absolute;
+  height: 6px;
+  background-image: linear-gradient(blue, rgb(108, 108, 173), blue);
+  border-radius: 50%;
+  box-shadow: 0 0 0 1px blue;
+}
+
+.line1 {
+  width: 92%;
+  top: 30%;
+}
+
+.line2 {
+  width: 95%;
+  top: 50%;
+}
+
+.line3 {
+  width: 92%;
+  top: 70%;
+}
+
+.circle1,
+.circle2,
+.circle3,
+.circle4 {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-image: radial-gradient(circle, red 10%, black 50%);
+  box-shadow: 0 0 0 2px white, 0 0 0 6px gold;
+}
+
+.circle1 {
+  animation: circle 4s linear infinite;
+}
+
+.circle2 {
+  animation: circle 4s 0.5s linear infinite;
+}
+
+.circle3 {
+  animation: circle 4s 1s linear infinite;
+}
+
+.circle4 {
+  animation: circle 4s 1.5s linear infinite;
+}
+
+@keyframes circle {
+  50% {
+    background-image: radial-gradient(circle, gold 20%, black 70%);
+  }
+}
+
+.hand-all,
+.hand,
+.el2 {
+  position: relative;
+}
+
+.hand {
+  width: 250px;
+  height: 140px;
+  transform: translateX(-52%);
+}
+
+.play-hand {
+  display: flex;
+  top: -50%;
+  left: 55%;
+}
+
+.go {
+  font-size: 25px;
+  font-family: monospace;
+  font-weight: bold;
+  color: rgb(116, 4, 10);
+  box-shadow: 0 0 0 2px gold, 0 0 0 3px rgb(230, 203, 53),
+    0 0 0 6px rgb(194, 165, 0);
+  border-radius: 50px 10px 10px 50px;
+  padding: 10px 20px;
+}
+
+.el1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 125px;
+  width: 125px;
+  background-image: linear-gradient(
+    rgb(116, 4, 10),
+    rgb(233, 27, 38),
+    rgb(116, 4, 10)
+  );
+  box-shadow: 0 0 0 2px rgb(94, 3, 7);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.el2 {
+  top: 50%;
+  left: 0;
+  width: 128px;
+  height: 20px;
+  background-image: linear-gradient(blue 20%, rgb(251, 251, 253), blue);
+  box-shadow: 0 0 0 2px rgb(1, 1, 156);
+  transform-origin: 100%;
+  transform: rotate(115deg);
+  z-index: -2;
+}
+
+/* animacja dla .el2 do rozpoczęcia gry (zakręć) */
+.active {
+  animation: hand 1s linear;
+}
+
+@keyframes hand {
+  20% {
+    transform: rotate(235deg);
+  }
+
+  80% {
+    transform: rotate(235deg);
+  }
+
+  100% {
+    transform: rotate(115deg);
+  }
+}
+
+.el3 {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-image: radial-gradient(
+    farthest-corner at 10px 15px,
+    white 5%,
+    gold 40%
+  );
+  transform: translate(-50%, -20%);
+  box-shadow: 0 0 0 2px rgb(206, 175, 1);
+  cursor: pointer;
+  border: none;
+  animation: el3 2.5s linear infinite;
+  outline: none;
+}
+
+@keyframes el3 {
+  29% {
+    box-shadow: 0 0 0 2px rgb(206, 175, 1);
+  }
+
+  30% {
+    box-shadow: 0 0 0 4px rgb(206, 175, 1), 0 0 10px 8px orange, 0 0 15px gold;
+  }
+
+  70% {
+    box-shadow: 0 0 0 4px rgb(206, 175, 1), 0 0 10px 8px orange, 0 0 15px gold;
+  }
+
+  71% {
+    box-shadow: 0 0 0 2px rgb(206, 175, 1);
+  }
+}
+
+/* pop-up dla przegranej */
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+
+.wrap.blur {
+  filter: blur(3px);
+}
+
+.modal-wrap.show {
+  display: block;
+}
+
+.modal-wrap {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.568);
+}
+
+.modal,
+.ring,
+.bandit,
+.b-right,
+.b-left,
+.text,
+.line {
+  position: absolute;
+}
+
+.modal-hiden {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  min-width: 600px;
+  max-width: 950px;
+  height: 80%;
+  z-index: 2;
+}
+
+.modal {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  min-width: 600px;
+  max-width: 950px;
+  height: 80%;
+  background-image: url(casino1.jpg);
+  background-position: bottom center;
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  border-radius: 25px;
+  box-shadow: 0 0 0 1px black, 0 0 0 3px gold, 0 0 0 6px rgb(230, 203, 53),
+    0 0 0 9px rgb(194, 165, 0), 0 0 0 11px black;
+  overflow: hidden;
+}
+
+.ring {
+  width: 9vh;
+  height: 9vh;
+  border-radius: 50%;
+  background-image: radial-gradient(
+    circle,
+    gold 15%,
+    rgb(206, 7, 7) 30%,
+    black 70%
+  );
+  box-shadow: 0 0 0 3px gold, 0 0 0 6px rgb(230, 203, 53),
+    0 0 0 8px rgb(194, 165, 0);
+}
+
+.ring.r1 {
+  top: -4.5vh;
+  left: -4.5vh;
+}
+
+.ring.r2 {
+  top: -4.5vh;
+  right: -4.5vh;
+}
+
+.ring.r3 {
+  bottom: -4.5vh;
+  left: -4.5vh;
+}
+
+.ring.r4 {
+  bottom: -4.5vh;
+  right: -4.5vh;
+}
+
+.bandit {
+  top: 63%;
+  left: 150%;
+  transform: translate(-50%, -50%) rotate(0);
+  width: 56%;
+  height: 56%;
+  background-image: url(bandit.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  animation: bandit-grow 4.1s step-start,
+    bandit-round 2.5s 4.1s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+/* animacja dla pingwina w środku idącego do przodu */
+@keyframes bandit-grow {
+  0% {
+    top: 56%;
+    left: 50%;
+    width: 35%;
+    height: 35%;
+    transform: translate(-50%, -50%) rotate(0);
+  }
+
+  19.99% {
+    top: 56%;
+    left: 50%;
+    width: 35%;
+    height: 35%;
+    transform: translate(-50%, -50%) rotate(0);
+  }
+
+  20% {
+    top: 57%;
+    left: 50%;
+    width: 38%;
+    height: 38%;
+    transform: translate(-50%, -50%) rotate(9deg);
+  }
+
+  25% {
+    top: 58%;
+    left: 50%;
+    width: 41%;
+    height: 41%;
+    transform: translate(-50%, -50%) rotate(-9deg);
+  }
+
+  30% {
+    top: 59%;
+    left: 50%;
+    width: 44%;
+    height: 44%;
+    transform: translate(-50%, -50%) rotate(9deg);
+  }
+
+  35% {
+    top: 60%;
+    left: 50%;
+    width: 47%;
+    height: 47%;
+    transform: translate(-50%, -50%) rotate(-9deg);
+  }
+
+  40% {
+    top: 61%;
+    left: 50%;
+    width: 50%;
+    height: 50%;
+    transform: translate(-50%, -50%) rotate(9deg);
+  }
+
+  45% {
+    top: 62%;
+    left: 50%;
+    width: 53%;
+    height: 53%;
+    transform: translate(-50%, -50%) rotate(-9deg);
+  }
+
+  50% {
+    top: 63%;
+    left: 50%;
+    width: 56%;
+    height: 56%;
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  100% {
+    top: 63%;
+    left: 50%;
+    width: 56%;
+    height: 56%;
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+}
+
+/* animacja dla pingwina w środku toczącego się w prawo */
+@keyframes bandit-round {
+  0% {
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(0);
+  }
+
+  100% {
+    left: 150%;
+    transform: translate(-50%, -50%) rotate(450deg);
+  }
+}
+
+.b-right,
+.b-left {
+  bottom: -5%;
+  width: 50%;
+  height: 50%;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.b-left {
+  left: -6%;
+  transform: rotate(0);
+  background-image: url(bandit-left.png);
+  animation: b-left-move 1s;
+}
+
+/* animacja dla pingwina z lewej strony */
+@keyframes b-left-move {
+  0% {
+    transform: rotate(0);
+    left: -40%;
+  }
+
+  94% {
+    transform: rotate(-6deg);
+    left: -6%;
+  }
+}
+
+.b-right {
+  right: -7%;
+  transform: rotate(0);
+  background-image: url(bandit-right.png);
+  animation: b-right-move 1s;
+}
+
+/* aniamacja dla pingwina z prawej strony */
+@keyframes b-right-move {
+  0% {
+    transform: rotate(0);
+    right: -47%;
+  }
+
+  94% {
+    transform: rotate(6deg);
+    right: -7%;
+  }
+}
+
+.text {
+  top: 6%;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  transform: rotate(-35deg);
+  transform-origin: 70% -30%;
+  animation: text-down 4.2s cubic-bezier(0.79, 2.63, 0, 0.07);
+}
+
+/* animacja dla tekstu game over */
+@keyframes text-down {
+  0% {
+    top: -30%;
+    transform: rotate(0);
+    transform-origin: 0;
+  }
+
+  70% {
+    top: -30%;
+    transform: rotate(0);
+    transform-origin: 0;
+  }
+
+  75% {
+    top: 6%;
+    transform: rotate(0);
+    transform-origin: 0;
+  }
+
+  95% {
+    top: 6%;
+    transform: rotate(0);
+    transform-origin: 70% -30%;
+  }
+
+  100% {
+    top: 6%;
+    transform: rotate(-35deg);
+    transform-origin: 70% -30%;
+  }
+}
+
+.text span {
+  padding: 0 10px;
+  font-size: 80px;
+  color: gold;
+  box-shadow: 0 0 0 2px gold, 0 0 0 5px red, 0 0 0 10px gold, 0 0 0 11px black;
+  text-shadow: 0 0 2px red;
+  background-color: rgba(0, 0, 0, 0.712);
+}
+
+.line {
+  top: -22%;
+  width: 2px;
+  height: 1vh;
+  background-color: gold;
+  box-shadow: 0 0 0 2px red, 0 0 0 5px gold, 0 0 0 6px black;
+}
+
+.l-one {
+  left: 30%;
+}
+
+.l-two {
+  right: 30%;
+}
+
+button.continue {
+  position: absolute;
+  bottom: 7%;
+  left: 50%;
+  width: 30%;
+  height: 10%;
+  transform: translateX(-50%) scale(1);
+  font-size: 19px;
+  padding: 5px;
+  color: rgb(253, 232, 45);
+  text-shadow: 0 0 2px red, 0 0 4px black;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 0 0 2px gold, 0 0 0 5px red, 0 0 0 10px gold, 0 0 0 11px black;
+  background-image: linear-gradient(
+    rgb(146, 9, 9),
+    red,
+    black,
+    red,
+    rgb(146, 9, 9)
+  );
+  cursor: pointer;
+  animation: btn-grow 5.6s linear, shake 3s 7.7s linear infinite;
+  outline: none;
+}
+
+/* animacje dla buttona continue */
+@keyframes btn-grow {
+  0% {
+    transform: translateX(-50%) scale(0);
+  }
+
+  95% {
+    transform: translateX(-50%) scale(0);
+  }
+
+  100% {
+    transform: translateX(-50%) scale(1);
+  }
+}
+
+@keyframes shake {
+  48% {
+    left: 50%;
+  }
+
+  48.01% {
+    left: 49%;
+  }
+
+  50% {
+    left: 51%;
+  }
+
+  52% {
+    left: 49%;
+  }
+
+  54% {
+    left: 51%;
+  }
+
+  56% {
+    left: 49%;
+  }
+
+  56.01% {
+    left: 50%;
+  }
+}
