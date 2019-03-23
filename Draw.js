@@ -1,8 +1,8 @@
 class Draw {
   constructor() {
-    this.options = ['url(black.png)', 'url(heart.jpg)', 'url(luck.png)'];
-    let _result = this.drawResult()
-    this.getDrowResult = () => _result;
+    this.options = ["url(black.png)", "url(heart.jpg)", "url(luck.png)"];
+    let _result = this.drawResult();
+    this.getDrawResult = () => _result;
   }
 
   drawResult() {
@@ -13,6 +13,6 @@ class Draw {
       const color = this.options[index];
       colors.push(color);
     }
-    return colors
+    return colors;
   }
 }
