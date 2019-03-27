@@ -1,6 +1,10 @@
 class Draw {
   constructor() {
-    this.options = ["url(black.png)", "url(heart.jpg)", "url(luck.png)"];
+    this.options = [
+      "url(./images/black.png)",
+      "url(./images/heart.jpg)",
+      "url(./images/luck.png)"
+    ];
     let _result = this.drawResult();
     this.getDrawResult = () => _result;
   }

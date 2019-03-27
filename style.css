@@ -64,11 +64,9 @@ body {
 .machine-middle,
 .machine-down {
   width: 100%;
-  background-image: linear-gradient(
-    rgb(129, 5, 11),
+  background-image: linear-gradient(rgb(129, 5, 11),
     rgb(236, 30, 40),
-    rgb(129, 5, 11)
-  );
+    rgb(129, 5, 11));
   box-shadow: 0 0 0 3px #072864, 0 0 0 5px #043692, 0 0 0 6px #164193,
     0 0 0 7px #053285, 0 0 0 10px #072864;
 }
@@ -192,11 +190,9 @@ span.dollar {
   box-shadow: 0 0 0 3px gold, 0 0 0 4px rgb(230, 203, 53),
     0 0 0 7px rgb(194, 165, 0);
   border-radius: 10px;
-  background-image: linear-gradient(
-    rgb(116, 4, 10),
+  background-image: linear-gradient(rgb(116, 4, 10),
     rgb(233, 27, 38),
-    rgb(116, 4, 10)
-  );
+    rgb(116, 4, 10));
   overflow: hidden;
 }
 
@@ -204,11 +200,9 @@ span.dollar {
   width: 30%;
   height: 170px;
   margin: 10px;
-  background-image: linear-gradient(
-    rgb(110, 110, 110),
+  background-image: linear-gradient(rgb(110, 110, 110),
     white,
-    rgb(110, 110, 110)
-  );
+    rgb(110, 110, 110));
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -347,11 +341,9 @@ span.dollar {
   left: 50%;
   height: 125px;
   width: 125px;
-  background-image: linear-gradient(
-    rgb(116, 4, 10),
+  background-image: linear-gradient(rgb(116, 4, 10),
     rgb(233, 27, 38),
-    rgb(116, 4, 10)
-  );
+    rgb(116, 4, 10));
   box-shadow: 0 0 0 2px rgb(94, 3, 7);
   border-radius: 50%;
   transform: translate(-50%, -50%);
@@ -392,11 +384,9 @@ span.dollar {
   width: 32px;
   height: 32px;
   border-radius: 50%;
-  background-image: radial-gradient(
-    farthest-corner at 10px 15px,
+  background-image: radial-gradient(farthest-corner at 10px 15px,
     white 5%,
-    gold 40%
-  );
+    gold 40%);
   transform: translate(-50%, -20%);
   box-shadow: 0 0 0 2px rgb(206, 175, 1);
   cursor: pointer;
@@ -474,7 +464,7 @@ span.dollar {
   min-width: 600px;
   max-width: 950px;
   height: 80%;
-  background-image: url(casino1.jpg);
+  background-image: url(./images/casino1.jpg);
   background-position: bottom center;
   background-size: auto 100%;
   background-repeat: no-repeat;
@@ -488,12 +478,10 @@ span.dollar {
   width: 9vh;
   height: 9vh;
   border-radius: 50%;
-  background-image: radial-gradient(
-    circle,
+  background-image: radial-gradient(circle,
     gold 15%,
     rgb(206, 7, 7) 30%,
-    black 70%
-  );
+    black 70%);
   box-shadow: 0 0 0 3px gold, 0 0 0 6px rgb(230, 203, 53),
     0 0 0 8px rgb(194, 165, 0);
 }
@@ -524,7 +512,7 @@ span.dollar {
   transform: translate(-50%, -50%) rotate(0);
   width: 56%;
   height: 56%;
-  background-image: url(bandit.png);
+  background-image: url(./images/bandit.png);
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
@@ -641,7 +629,7 @@ span.dollar {
 .b-left {
   left: -6%;
   transform: rotate(0);
-  background-image: url(bandit-left.png);
+  background-image: url(./images/bandit-left.png);
   animation: b-left-move 1s;
 }
 
@@ -661,7 +649,7 @@ span.dollar {
 .b-right {
   right: -7%;
   transform: rotate(0);
-  background-image: url(bandit-right.png);
+  background-image: url(./images/bandit-right.png);
   animation: b-right-move 1s;
 }
 
@@ -760,13 +748,11 @@ button.continue {
   border: none;
   border-radius: 10px;
   box-shadow: 0 0 0 2px gold, 0 0 0 5px red, 0 0 0 10px gold, 0 0 0 11px black;
-  background-image: linear-gradient(
-    rgb(146, 9, 9),
+  background-image: linear-gradient(rgb(146, 9, 9),
     red,
     black,
     red,
-    rgb(146, 9, 9)
-  );
+    rgb(146, 9, 9));
   cursor: pointer;
   animation: btn-grow 5.6s linear, shake 3s 7.7s linear infinite;
   outline: none;
