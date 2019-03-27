@@ -6,7 +6,7 @@ Slot machine game. Enter the amount and spin :)
 
 I used html, css(a lot fun with animations), JS(my first OOP).
 
-## Screenshots
+## Screenshot
 
 ![Screenshot](./images/screenshot.jpg)
 
