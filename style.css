@@ -1,9 +1,9 @@
 /* 
-brązowy: #690E0B
-zółty: #D6DE16
-jasno-bordowy: #B60600
-niebieski: #0D4E83
-ciemny-niebieski: #053C69
+brown: #690E0B
+yellow: #D6DE16
+bright-crimson: #B60600
+blue: #0D4E83
+dark-blue: #053C69
 
 
 fonty: 
@@ -45,7 +45,7 @@ body {
   z-index: 55;
 }
 
-/* animacja dla div.wrap przy wejściu na strone */
+/* animation for div.wrap at the entrance to the page */
 @keyframes grow {
   0% {
     transform: translate(-50%, -50%) scale(0.2);
@@ -98,7 +98,7 @@ body {
   }
 }
 
-/* klasa i animacja po przekroczeniu 1000$ */
+/* class and animation after exceeding $ 1,000*/
 .machine-up h1.big-money {
   color: rgb(4, 68, 128);
   text-shadow: 0 0 4px black, 0 0 8px white, 0 0 17px rgb(0, 68, 255);
@@ -225,7 +225,7 @@ span.dollar {
   transition-delay: 0.6s;
 }
 
-/* animacja dla pustych szarych tablic z początku gry */
+/* animation for empty gray tables from the beginning of the game */
 @keyframes image-down {
   0% {
     transform: translateY(-120%);
@@ -361,7 +361,7 @@ span.dollar {
   z-index: -2;
 }
 
-/* animacja dla .el2 do rozpoczęcia gry (zakręć) */
+/* animation for .el2 to start the game (spin) */
 .active {
   animation: hand 1s linear;
 }
@@ -413,7 +413,7 @@ span.dollar {
   }
 }
 
-/* pop-up dla przegranej */
+/* pop-up for losing */
 /* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
 
 .wrap.blur {
@@ -520,7 +520,7 @@ span.dollar {
     bandit-round 2.5s 4.1s cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 
-/* animacja dla pingwina w środku idącego do przodu */
+/* animation for a penguin in the middle of going forward */
 @keyframes bandit-grow {
   0% {
     top: 56%;
@@ -603,7 +603,7 @@ span.dollar {
   }
 }
 
-/* animacja dla pingwina w środku toczącego się w prawo */
+/*animation for the penguin in the middle of rolling to the right */
 @keyframes bandit-round {
   0% {
     left: 50%;
@@ -633,7 +633,7 @@ span.dollar {
   animation: b-left-move 1s;
 }
 
-/* animacja dla pingwina z lewej strony */
+/* penguin animation on the left side */
 @keyframes b-left-move {
   0% {
     transform: rotate(0);
@@ -653,7 +653,7 @@ span.dollar {
   animation: b-right-move 1s;
 }
 
-/* aniamacja dla pingwina z prawej strony */
+/* penguin animation on the right side */
 @keyframes b-right-move {
   0% {
     transform: rotate(0);
@@ -676,7 +676,7 @@ span.dollar {
   animation: text-down 4.2s cubic-bezier(0.79, 2.63, 0, 0.07);
 }
 
-/* animacja dla tekstu game over */
+/* animation for text game over */
 @keyframes text-down {
   0% {
     top: -30%;
@@ -758,7 +758,7 @@ button.continue {
   outline: none;
 }
 
-/* animacje dla buttona continue */
+/* animation for text buttona continue */
 @keyframes btn-grow {
   0% {
     transform: translateX(-50%) scale(0);

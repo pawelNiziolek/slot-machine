@@ -11,7 +11,7 @@ class Draw {
 
   drawResult() {
     let colors = [];
-    // uzupełnianie poprzez losowanie
+    // replenishment by lot
     for (let i = 0; i < this.options.length; i++) {
       const index = Math.floor(Math.random() * this.options.length);
       const color = this.options[index];

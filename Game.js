@@ -3,7 +3,7 @@ class Game {
     this.stats = new Statistics();
     this.wallet = new Wallet(start);
 
-    // usuwanie animacji (klasy) active dla "dźwigni"
+    // deleting an active animation (class) for "leverage"
     function handFun() {
       hand.classList.remove("active");
     }
@@ -49,7 +49,7 @@ class Game {
       result = `PRZEGRANA ${bid}$`;
     }
 
-    // zmienne i funkcja dla uruchomienia pop-up'a po przegranej
+    // for launching a pop-up after losing
     const wrap = document.querySelector(".wrap");
     const modalWrap = document.querySelector(".modal-wrap");
     const h1 = document.querySelector(".machine-up h1");
